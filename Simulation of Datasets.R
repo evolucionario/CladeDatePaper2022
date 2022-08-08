@@ -1,10 +1,11 @@
-##########################################################
-### Simulations of Trees, Fossils, etc ###
-##########################################################
- 
-# Use unconstrained BD tree instead of age = 20
-# Use a sampled/incomplete tree (frac=0.2) to distribute branching times more evenly
+##############################################################
+### Simulations of Trees, DNA sequences and Fossil Records ###
+##############################################################
 
+by Santiago Claramunt - claramunt.bio@gmail.com
+
+
+### LOAD REQUIRED PACKAGES ###
 
 library(ape)
 library(phangorn)
@@ -14,16 +15,15 @@ library(FossilSim)
 #install_github("evolucionario/CladeDate")
 library(CladeDate)
 
-setwd("~/Documents/Avian Time Trees/Simulated Datasets BD2")
 
-
-# Ancillary function #
+### ANCILLIARY FUNCTIONS ###
 
 ### Function that collects the fossil record (ages) of a particular clade indicated by the MRCA node number (x)
-# x the node number
-# phy a phylogenetic tree of class 'phylo'
-# fossils an object of class 'fossils'
-# stem	if TRUE, fossils along the basal stem lienage are also reported
+
+# x         the node number
+# phy       a phylogenetic tree of class 'phylo'
+# fossils   an object of class 'fossils'
+# stem	    if TRUE, fossils along the basal stem lienage are also reported
 
 fossil.record <- function(x, phy, fossils, stem=FALSE) {
 
@@ -38,7 +38,7 @@ fossil.record <- function(x, phy, fossils, stem=FALSE) {
 	fages <- c(fages, fossils$hmin[which(fossils$edge == des[i])])
 	}
 	
-	# Get tip names to faciliate the generation of the clade constraint in MrBayes
+	# Get tip names to faciliate the generation of the clade constraint
 
 	tnames <- phy$tip.label[Descendants(phy, node=x, type = "tips")[[1]]]
 
@@ -56,33 +56,28 @@ fossil.record <- function(x, phy, fossils, stem=FALSE) {
 	return(RES)
 }
 
+### END ###
 
 
-
-
-#############################
-### Simulation Parameters ###
-#############################
-
-RATE <- 0.02
 
 
 #################
 ### MAIN LOOP ###
-#################
 
-# Create a big loop that repeats the script 
+
+### SIMULATION PARAMETERS ###
+
+RATE <- 0.02
 
 REPS <- 1:100
 
+# Loop that repeats the script 
+
 for(i in REPS) {
+	
+### SIMULATE TREE ###
 
-
-#####################
-### Simulate tree ###
-#####################
-
-# using TreeSim function in a repeat loop to make sure basal sister taxa both have more than 2 species (so at least one internal node)
+# using TreeSim function in a 'repeat' loop to make sure basal sister taxa both have more than 2 species (so at least one internal node to calibrate)
 # balance calculates the numer of descendants for each dougther clade and the first entry is the root node
 
 repeat {
@@ -101,11 +96,12 @@ tr$root.edge <- NULL
 write.tree(tr, file=paste0("Simulated",i,".tre"))
 
 
-### Add outgroup to tree ###
+# Add an outgroup to tree (needed for rooting the tree after phylogenetic analysis) #
 
 tr1 <- tr
 
 # Create a 2 Ma root edge to attach the outgroup
+
 tr1$root.edge <- 2 
 
 AGE <- max(branching.times(tr1))
@@ -115,21 +111,17 @@ og.edge <- read.tree(text = paste0("(og:", AGE+2, ");"))
 
 tr2 <- bind.tree(tr1, og.edge, position=2) 
 
-# force to be ultrametric to correct rounding errors
+# force the resultant tree to be ultrametric to correct for rounding errors
 
 tr2 <- force.ultrametric(tr2, method=c("nnls"))
 
 plot(tr2); axisPhylo()
 
-#is.ultrametric(tr2); is.binary(tr2)
 
+### SIMULATE DNA SEQUENCES ###
 
-####################################
-### Simulate molecular sequences ###
-####################################
-
-# Basic method with high stochasticity due to short sequence
-# The idea is that the sequences, which are simulated in a strict clock fashion, do not dominate the results
+# Basic method with high stochasticity due to short sequence length
+# The idea is that the sequences, which are simulated assuming a strict molecular clock, do not dominate the results
 
 # JC model:
 
@@ -138,21 +130,10 @@ DNA <- simSeq(tr2, l = 1000, type = "DNA", rate = RATE)
 write.FASTA(as.DNAbin(DNA), file=paste0("SimulatedDNA.",i,".fas"))
 
 
-## Alternative ##
-# Add a jiggle to branch lengths to simulate rate heterogeneity
-#tr2 <- tr
-#tr2$edge.length <- tr$edge.length * rlnorm(length(tr$edge.length), 0.1, 0.3)
-#tr2$edge.length <- tr$edge.length * rnorm(length(tr$edge.length), 1, 0.3)
-#plot(tr2)
-# JC model with long sequences so the data carry the non-clock signal
-#DNA <- simSeq(tr2, l = 4000, type = "DNA", rate = 0.02)
-# But makes estimation more dificult, involvining the clockrate
+### INFER MAXIMUM LIKELIHOOD PHYLOGENY ###
 
-
-######################################################################
-### Infer a ML tree with DNA sequences and fixed original topology ###
-######################################################################
-
+# Infer a ML tree using simulated DNA sequences and the original topology fixed
+	
 MLfit <- pml(tr2, DNA, rate = RATE)
 
 MLtree <- optim.pml(MLfit)
@@ -176,14 +157,9 @@ write.tree(MLtree3, file=paste0("EstimatedML",i,".tre"))
 ### ML tree ready ###
 
 
+### SIMULATE FOSSILS ON BRANCHES ###
 
-
-####################################
-### Simulate fossils on branches ###
-####################################
-
-### Different fossilization in different clades ###
-
+## Different fossilization in different clades ##
 
 # Find the two descendant nodes of the root node
 
@@ -225,36 +201,11 @@ save(fr.clade2, file=paste0("FossilRecordClade2.",i,".R"))
 
 save(Fos2, file=paste0("FossilSim",i,".R"))
 
+	
+### END OF MAIN LOOP ###
+########################
 
-#############################################
-### Estimate Clade Age from Fossil Record ###
-#############################################
-
-# Using the StraussSadler method and the gamma function to simplify
-
-date.clade1 <- clade.date(ages=fr.clade1$fossil.ages, PDFfitting="lognormal", KStest=TRUE)
-
-if(date.clade1$KStest$p.value < 0.05) {
-
-date.clade1 <- clade.date(ages=fr.clade1$fossil.ages, method="Solow", PDFfitting="lognormal")
-
-	}
-
-
-date.clade2 <- clade.date(ages=fr.clade2$fossil.ages, PDFfitting="lognormal", KStest=TRUE)
-
-if(date.clade2$KStest$p.value < 0.05) {
-
-date.clade2 <- clade.date(ages=fr.clade2$fossil.ages, method="Solow", PDFfitting="lognormal")
-
-	}
-
-save(date.clade1, file=paste0("Clade1date.",i,".R"))
-
-save(date.clade2, file=paste0("Clade2date.",i,".R"))
-
-cat(paste("\nReplicate",i,"completed\n"))
-
-}
-
-##### END OF MAIN LOOP ######
+	
+###########
+### END ###
+###########
