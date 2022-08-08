@@ -2,7 +2,7 @@
 ### SIMULATION OF TREES, DNA SEQUENCES, AND FOSSIL RECORDS ###
 ##############################################################
 
-by Santiago Claramunt - claramunt.bio@gmail.com
+# by Santiago Claramunt - claramunt.bio@gmail.com
 
 
 ### LOAD REQUIRED PACKAGES ###
