@@ -1,5 +1,5 @@
 ##############################################################
-### Simulations of Trees, DNA sequences and Fossil Records ###
+### SIMULATION OF TREES, DNA SEQUENCES, AND FOSSIL RECORDS ###
 ##############################################################
 
 by Santiago Claramunt - claramunt.bio@gmail.com
@@ -14,50 +14,6 @@ library(FossilSim)
 #library(devtools)
 #install_github("evolucionario/CladeDate")
 library(CladeDate)
-
-
-### ANCILLIARY FUNCTIONS ###
-
-### Function that collects the fossil record (ages) of a particular clade indicated by the MRCA node number (x)
-
-# x         the node number
-# phy       a phylogenetic tree of class 'phylo'
-# fossils   an object of class 'fossils'
-# stem	    if TRUE, fossils along the basal stem lienage are also reported
-
-fossil.record <- function(x, phy, fossils, stem=FALSE) {
-
-# Phangorn function Descendants identifies the descendant nodes and tips
-	
-	des <- Descendants(phy, node=x, type = "all")
-
-# Then use the descendants indices to retrieve the fossil ages from the fossil object
-	fages <- numeric()
-
-	for(i in 1:length(des)) {
-	fages <- c(fages, fossils$hmin[which(fossils$edge == des[i])])
-	}
-	
-	# Get tip names to faciliate the generation of the clade constraint
-
-	tnames <- phy$tip.label[Descendants(phy, node=x, type = "tips")[[1]]]
-
-	if(stem==TRUE) {
-		
-		stemfage <- fossils$hmin[which(fossils$edge == x)]
-		
-		fages <- c(stemfage, fages) 
-	}
-
-	fages <- sort(fages, decreasing=TRUE)
-	
-	RES <- list(mrca.node = x, tip.names=tnames, fossil.ages=fages, n.foss=length(fages))
-	
-	return(RES)
-}
-
-### END ###
-
 
 
 
