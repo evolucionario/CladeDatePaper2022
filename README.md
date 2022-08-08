@@ -1,4 +1,4 @@
-### Code used in Claramunt 2022 CladeDate: empirical calibration density generator for divergence time estimation. Methods in Ecology and Evolution.
+# Code used in Claramunt 2022 CladeDate: empirical calibration density generator for divergence time estimation. Methods in Ecology and Evolution.
 
 Santiago Claramunt
 
@@ -7,9 +7,9 @@ Department of Ecology and Evolutionary Biology, University of Toronto, Ontario, 
 
 E-mail: claramunt.bio@gmail.com
 
-##Content:
+###Content:
 
-# CladeDate package
+### CladeDate package
 
 CladeDate is an R package for the generation of empirical calibration information from the fossil record. CladeDate uses simple mathematical models to estimate the age of a clade and its uncertainty based on fossil ages. Using a Monte Carlo approach, CladeDate generates empirical densities representing the uncertainty associated with the age of the clade and fits standard probability density functions that can be used in time-tree inference software such as BEAST2, MrBayes, and MCMCtree.
 
@@ -21,7 +21,7 @@ install_github("evolucionario/CladeDate")
 library(CladeDate)
 ````
 
-# Code used for simulations
+### Code used for simulations
 
   R code used for generating phylogenetic trees, DNA sequencies, and fossil records
   
