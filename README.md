@@ -1,9 +1,8 @@
-# Code used in Claramunt 2022 CladeDate: empirical calibration density generator for divergence time estimation. Methods in Ecology and Evolution.
+# Code used in "CladeDate: calibration information generator for divergence time estimation" (Claramunt 2022, Methods in Ecology and Evolution)
 
 Santiago Claramunt
 
-_Department of Natural History, Royal Ontario Museum_
-
+_Department of Natural History, Royal Ontario Museum_ 
 _Department of Ecology and Evolutionary Biology, University of Toronto_
 
 Functions and code used in the paper "CladeDate: empirical calibration density generator for divergence time estimation" (Claramunt 2022 Methods in Ecology and Evolution), including the first published version of the R package CladeDate (Version 1.0). The most updated version of CladeDate is in https://github.com/evolucionario/cladedate.
@@ -34,7 +33,7 @@ library(CladeDate)
 
 ### References
 
-- Claramunt, S. 2022 CladeDate: empirical calibration information for divergence time estimation. _Methods in Ecology and Evolution_.
+- Claramunt, S. 2022 CladeDate: calibration information generator for divergence time estimation. _Methods in Ecology and Evolution_.
 
 - Matschiner, M., Musilová, Z., Barth, J. M. I., Starostová, Z., Salzburger, W., Steel, M., & Bouckaert, R. R. (2017). Bayesian phylogenetic estimation of clade ages supports trans-Atlantic dispersal of cichlid fishes. _Systematic Biology_ 66(1):3–22.
 
