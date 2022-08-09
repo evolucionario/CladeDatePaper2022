@@ -16,6 +16,9 @@ library(FossilSim)
 library(CladeDate)
 
 
+### Set the Working Directory ###
+
+#setwd("DIR")
 
 #################
 ### MAIN LOOP ###
@@ -70,8 +73,6 @@ tr2 <- bind.tree(tr1, og.edge, position=2)
 # force the resultant tree to be ultrametric to correct for rounding errors
 
 tr2 <- force.ultrametric(tr2, method=c("nnls"))
-
-plot(tr2); axisPhylo()
 
 
 ### SIMULATE DNA SEQUENCES ###
@@ -139,8 +140,6 @@ tr$root.edge <- NULL
 repeat {
 
 Fos2 <- sim.fossils.poisson(rate=Rates, tree=tr)
-
-plot(Fos2, tr); nodelabels(); tiplabels(tr$tip.label)
 
 # Obtain fossil recod
 
