@@ -9,6 +9,7 @@
 
 library(ape)
 library(phangorn)
+library(phytools)
 library(TreeSim)
 library(FossilSim)
 #library(devtools)
