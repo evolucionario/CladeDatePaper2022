@@ -1,6 +1,6 @@
-##########################################################
-### Simulations for validating the CladeDate algorithm ###
-##########################################################
+####################################################################
+### Simulations Evaluating the CladeDate algorithm using Chronos ###
+####################################################################
 
 
 library(ape)
@@ -8,8 +8,7 @@ library(ape)
 library(CladeDate)
 
 
-
-setwd("DIR") # set the directory where simulated dataset reside
+# setwd("DIR") # set the directory where simulated datasets reside
 
 
 
@@ -110,52 +109,26 @@ cat(paste("\nReplicate",i,"completed\n"))
 ### Calculating Acuracy and Precision ###
 
 
-### Regression Method ###
-# Slope (acuracy, bias)
-# Coefficient of Determination (precision)
+### Slope of regression through origin (accuracy, bias)
 
 M1 <- lm(estages ~ trueages -1)
 
 summary(M1)
 
-Call:
-lm(formula = estages ~ trueages - 1)
 
-Residuals:
-     Min       1Q   Median       3Q      Max 
--12.1600  -0.8985   0.0312   0.7716  16.9952 
-
-Coefficients:
-         Estimate Std. Error t value Pr(>|t|)    
-trueages 0.970067   0.004359   222.5   <2e-16 ***
----
-Signif. codes:  
-0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 2.444 on 755 degrees of freedom
-Multiple R-squared:  0.985,	Adjusted R-squared:  0.985 
-F-statistic: 4.952e+04 on 1 and 755 DF,  p-value: < 2.2e-16
-
-confint(M1, "trueages")
-             2.5 %    97.5 %
-trueages 0.9615097 0.9786251
-
-# Presicion
+### Correlation coefficinet (precision)
 
 cor(estages, trueages)
 
-# 0.9735038
-
-########################################
+#############
 
 
 
 
 #############
 ### PLOT  ###
-#############
 
-### Simulated vs. estiamted ###
+### Simulated versus estiamted ###
 
 Max <- max(c(CHages, BDages), na.rm=TRUE)
 
@@ -172,6 +145,6 @@ points(BDages, CHages, col= col.cd.bg, bg= col.cd.bg, pch=21, cex=0.8)
 abline(a=0, b=1)
 abline(M1, lty="dashed")
 
-###########
+
 ### END ###
 ###########
