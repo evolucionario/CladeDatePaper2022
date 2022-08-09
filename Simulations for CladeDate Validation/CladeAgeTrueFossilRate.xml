@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='noAutoSetClockRate|noAutoUpdateFixMeanSubstRate' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
 <!-- Deactivated Topological Moves -->
-<!-- Correct fossil sampling rate 0.5 -->
+<!-- Correct fossil sampling rate: 0.5 -->
 
 
     <data
