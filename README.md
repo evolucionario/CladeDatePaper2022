@@ -3,6 +3,7 @@
 Santiago Claramunt
 
 _Department of Natural History, Royal Ontario Museum_
+
 _Department of Ecology and Evolutionary Biology, University of Toronto_
 
 Functions and code used in the paper "CladeDate: empirical calibration density generator for divergence time estimation" (Claramunt 2022 Methods in Ecology and Evolution), including the first published version of the R package CladeDate (Version 1.0). The most updated version of CladeDate is in https://github.com/evolucionario/cladedate.
@@ -14,7 +15,7 @@ Functions and code used in the paper "CladeDate: empirical calibration density g
 
 `CladeDate` is an `R` package for the generation of empirical calibration information from the fossil record. `CladeDate` uses simple mathematical models to estimate the age of a clade and its uncertainty based on fossil ages. Using a Monte Carlo approach, `CladeDate` generates empirical densities representing the uncertainty associated with the age of the clade and fits standard probability density functions that can be used in time-tree inference software such as `BEAST2`, `MrBayes`, and `MCMCtree`.
 
-Instalation from the R console:
+Instalation from the `R` console:
 
 ````
 library(devtools)
@@ -24,11 +25,11 @@ library(CladeDate)
 
 ### Simulations used for the validation of the CladeDate algorithm
 
-  1. Simulation of Datasets: R code used for generating phylogenetic trees, DNA sequencies, and fossil records.
+  1. Simulation of Datasets: `R` code used for generating phylogenetic trees, DNA sequencies, and fossil records.
   
-  2. Simulations CladeDate with Chronos: R code for analyzing the simulated data using CladeDate and the time-tree estimation function 'chronos'in the _ape_ package (Paradis & Schliep 2019).
+  2. Simulations CladeDate with Chronos: `R` code for analyzing the simulated data using `CladeDate` and the time-tree estimation function `chronos` in the `ape` package (Paradis & Schliep 2019).
 
-  3. Simulation for CladeAge Analysis: R code for the comparison between CladeDate + chronos and CladeAge + BEAST (Matschiner et al. 2017).
+  3. Simulation for CladeAge Analysis: `R` code for the comparison between `CladeDate` + `chronos` and `CladeAge` + `BEAST` (Matschiner et al. 2017).
 
 
 ### References
