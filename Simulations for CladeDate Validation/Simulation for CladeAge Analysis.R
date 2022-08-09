@@ -16,14 +16,11 @@ SEED <- 99
 # using TreeSim function in a 'repeat' loop to make sure basal sister taxa both have more than 2 species (so at least one internal node)
 # balance calculates the numer of descendants for each dougther clade and the first entry is the root node
 
-tr <- sim.bd.taxa.age(age=AGE, n=10, numbsim=1, lambda=0.1, mu=0, frac = 1, mrca = TRUE)[[1]]
+#tr <- sim.bd.taxa.age(age=AGE, n=10, numbsim=1, lambda=0.1, mu=0, frac = 1, mrca = TRUE)[[1]]
+
+tr <- read.tree(text="((((t7:11.06730802,(t3:5.30770791,t9:5.30770791):5.759600115):4.673794634,t8:15.74110266):0.5778341325,t6:16.31893679):3.681063209,((t2:4.813437322,t1:4.813437322):5.261159269,((t4:2.856380757,t5:2.856380757):5.879688258,t10:8.736069015):1.338527576):9.925403409):0;")
 
 plot(tr); nodelabels()
-
-write.tree(tr)
-
-#"((((t7:11.06730802,(t3:5.30770791,t9:5.30770791):5.759600115):4.673794634,t8:15.74110266):0.5778341325,t6:16.31893679):3.681063209,((t2:4.813437322,t1:4.813437322):5.261159269,((t4:2.856380757,t5:2.856380757):5.879688258,t10:8.736069015):1.338527576):9.925403409):0;"
-
 
 
 # delete root edge (creates problems in FossiSim)
@@ -148,8 +145,8 @@ save(fr.clade2, file=paste0("FossilRecordClade2.0.R"))
 
 save(Fos2, file=paste0("FossilSim0.R"))
 
-load(file="FossilRecordClade1.0.R")
-load(file="FossilRecordClade2.0.R")
+#load(file="FossilRecordClade1.0.R")
+#load(file="FossilRecordClade2.0.R")
 
 ### END ###
 
@@ -163,66 +160,67 @@ date.clade1 <- clade.date(ages=fr.clade1$fossil.ages, PDFfitting="lognormal", KS
 
 if(date.clade1$KStest$p.value < 0.05) {
 
-date.clade1 <- clade.date(ages=fr.clade1$fossil.ages, method="Solow", PDFfitting="lognormal")
+date.clade1 <- clade.date(ages=fr.clade1$fossil.ages, method="RobsonWhitlock", PDFfitting="lognormal")
 
 	}
+
+
+save(date.clade1, file=paste0("Clade1date0.R"))
+
+#$Quantiles
+#      0%      50%      95% 
+#15.21580 16.39652 21.34264 
+
+#$KStest
+
+#	Exact one-sample Kolmogorov-Smirnov test
+
+#data:  Mages
+#D = 0.21748, p-value = 0.7712
+#alternative hypothesis: two-sided
+
+
+#$PDFfit.model
+#[1] "lognormal"
+
+#$PDFfit
+#     meanlog        sdlog   
+#  0.003230185   1.331636473 
+# (0.013316365) (0.009416092)
+ 
+
 
 
 date.clade2 <- clade.date(ages=fr.clade2$fossil.ages, PDFfitting="lognormal", KStest=TRUE)
 
 if(date.clade2$KStest$p.value < 0.05) {
 
-date.clade2 <- clade.date(ages=fr.clade2$fossil.ages, method="Solow", PDFfitting="lognormal")
+date.clade2 <- clade.date(ages=fr.clade2$fossil.ages, method="RobsonWhitlock", PDFfitting="lognormal")
 
-	}
-
-save(date.clade1, file=paste0("Clade1date0.R"))
-
-$Quantiles
-      0%      50%      95% 
-15.21580 16.39652 21.34264 
-
-$KStest
-
-	Exact one-sample Kolmogorov-Smirnov test
-
-data:  Mages
-D = 0.21748, p-value = 0.7712
-alternative hypothesis: two-sided
-
-
-$PDFfit.model
-[1] "lognormal"
-
-$PDFfit
-     meanlog        sdlog   
-  0.003230185   1.331636473 
- (0.013316365) (0.009416092)
- 
- 
+	} 
  
 save(date.clade2, file=paste0("Clade2date0.R"))
 
-$Quantiles
-       0%       50%       95% 
- 8.603469  9.008276 10.509394 
+#$Quantiles
+#       0%       50%       95% 
+# 8.603469  9.008276 10.509394 
 
-$KStest
+#$KStest
 
-	Exact one-sample Kolmogorov-Smirnov test
+#	Exact one-sample Kolmogorov-Smirnov test
 
-data:  Mages
-D = 0.19014, p-value = 0.6255
-alternative hypothesis: two-sided
+#data:  Mages
+#D = 0.19014, p-value = 0.6255
+#alternative hypothesis: two-sided
 
 
-$PDFfit.model
-[1] "lognormal"
+#$PDFfit.model
+#[1] "lognormal"
 
-$PDFfit
-     meanlog         sdlog    
-  -1.089524008    1.307049413 
- ( 0.013070494) ( 0.009242235)
+#$PDFfit
+#     meanlog         sdlog    
+#  -1.089524008    1.307049413 
+# ( 0.013070494) ( 0.009242235)
 
 
 
@@ -231,7 +229,7 @@ $PDFfit
 # Repeat the following code for each node
 
 # For clades use stem=TRUE to include fossils in the stem (as per CladeAge method)
-fossil.record(16, tr, fossils=Fos2, stem=TRUE)
+fossil.record(16, tr, fossils=Fos2)
 
 # For terminal branches, indicated by the number (not the name) of a tip, use stem=FALSE (the default)
 
