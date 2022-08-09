@@ -7,7 +7,7 @@ Department of Ecology and Evolutionary Biology, University of Toronto, Ontario, 
 
 E-mail: claramunt.bio@gmail.com
 
-Functions and code used in the paper "CladeDate: empirical calibration density generator for divergence time estimation (Claramunt 2022 Methods in Ecology and Evolution), including the first published version of the R package CladeDate (Version 1.0). The most updated version of CladeDate is in https://github.com/evolucionario/cladedate.
+Functions and code used in the paper "CladeDate: empirical calibration density generator for divergence time estimation" (Claramunt 2022 Methods in Ecology and Evolution), including the first published version of the R package CladeDate (Version 1.0). The most updated version of CladeDate is in https://github.com/evolucionario/cladedate.
 
 
 ## Content:
@@ -26,8 +26,17 @@ library(CladeDate)
 
 ### Simulations used for the validation of the CladeDate algorithm
 
-  Simulation of Datasets: R code used for generating phylogenetic trees, DNA sequencies, and fossil records
+  Simulation of Datasets: R code used for generating phylogenetic trees, DNA sequencies, and fossil records.
   
-  Simulations CladeDate with Chronos: R code for analyzing the simulated data using CladeDate and the time-tree estimation function 'chronos' (ape package) 
+  Simulations CladeDate with Chronos: R code for analyzing the simulated data using CladeDate and the time-tree estimation function 'chronos'in the *ape* package (Paradis & Schliep 2019).
 
-  Simulation for CladeAge Analysis: R code for the comparison between CladeDate + chronos and CladeAge + BEST
+  Simulation for CladeAge Analysis: R code for the comparison between CladeDate + chronos and CladeAge + BEAST (Matschiner et al. 2017).
+
+
+### References
+
+Claramunt, S. 2022 CladeDate: empirical calibration information for divergence time estimation. Methods in Ecology and Evolution.
+
+Matschiner, M., Musilová, Z., Barth, J. M. I., Starostová, Z., Salzburger, W., Steel, M., & Bouckaert, R. R. (2017). Bayesian phylogenetic estimation of clade ages supports trans-Atlantic dispersal of cichlid fishes. Systematic Biology, 66(1), 3–22.
+
+Paradis, E. & Schliep, K. (2019) ape 5.0: an environment for modern phylogenetics and evolutionary analyses in R. Bioinformatics, 35, 526-528.
