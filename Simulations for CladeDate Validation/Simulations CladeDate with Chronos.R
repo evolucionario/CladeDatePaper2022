@@ -4,11 +4,11 @@
 
 
 library(ape)
-
 library(CladeDate)
 
 
-# setwd("DIR") # set the directory where simulated datasets reside
+# Set the directory where simulated datasets reside
+setwd("DIR")
 
 
 
@@ -102,6 +102,11 @@ cat(paste("\nReplicate",i,"completed\n"))
 ### END OF LOOP ###
 ###################
 
+
+### Rearrange results and exclude failed runs ###
+
+trueages <- na.omit(unlist(as.list(BDages)))
+estages <- na.omit(unlist(as.list(CHages)))
 
 
 
