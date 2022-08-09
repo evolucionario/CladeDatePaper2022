@@ -7,7 +7,7 @@ Department of Ecology and Evolutionary Biology, University of Toronto, Ontario, 
 
 E-mail: claramunt.bio@gmail.com
 
-###Content:
+## Content:
 
 ### CladeDate package
 
@@ -21,10 +21,10 @@ install_github("evolucionario/CladeDatePaper2022/CladeDatePackage")
 library(CladeDate)
 ````
 
-### Code used for simulations
+### Simulations used for CladeDate Validation
 
-  R code used for generating phylogenetic trees, DNA sequencies, and fossil records
+  Simulation of Datasets: R code used for generating phylogenetic trees, DNA sequencies, and fossil records
   
-  R code for analyzing the simulated data using CladeDate and the time-tree estimation function 'chronos' (ape package) 
+  Simulations for CladeDate Validation: R code for analyzing the simulated data using CladeDate and the time-tree estimation function 'chronos' (ape package) 
 
-  R code for the comparison between CladeDate + chronos and CladeAge + BEST
+  Simulation for CladeAge Analysis: R code for the comparison between CladeDate + chronos and CladeAge + BEST
