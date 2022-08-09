@@ -1,4 +1,4 @@
-# Code used in "CladeDate: calibration information generator for divergence time estimation" (Claramunt 2022, Methods in Ecology and Evolution)
+# Code used in "CladeDate: calibration information generator for divergence time estimation" (Claramunt 2022, _Methods in Ecology and Evolution_)
 
 Santiago Claramunt
 
