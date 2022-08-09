@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='noAutoSetClockRate|noAutoUpdateFixMeanSubstRate' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
+<!-- Deactivated Topological Moves -->
+<!-- biased (downwards) fossil sample CladeDate prior 0.05 -->
+
+
+    <data
+id="SimulatedDNA0"
+spec="Alignment"
+name="alignment">
+                    <sequence id="seq_t1" spec="Sequence" taxon="t1" totalcount="4" value="TATATCCAGCTTCTCAGTCCCGGGGGCATCTGTTGTTATCAGAAGAGGTTGACTCTCATAACCTATAACACTGGGGTCTTTCCGGTCTTACAAGTCGGGCCATCGTGTGCTAGATGTCCGCAGAGCCACCCATGTAGTTTCATCTTTGCATCATATGTTCTATTCAACACTCTCACGCACGGTAATAAAAGTCATGAACGTTGTCTGTACGTAAGCGCTATTCCGCCACCTTCAAGGGCATGTGTAGTTAACGTTCGACGGAGCGCAAGCTTATTATTCTTCATGTAATGCCCAGAACAATTGCACATTGCGCGTGGTAAGACATCGCTCCCTATCTCCAACCTTGTTCATTCTACATCGCTCGGCAGGCCAGTCGGCCCGAAGTGCGCACCGCCATAGTCACCACTGGCACGGCCTTCCCGCGCCAGCAGAGGAGCTGTCACAGTAGAGCTTCAATTGCCTTAATAGCTCTGTCTGGACACCTTAGGAGTTCCCAAAAGGTGCCCAGAGCGGCAGGCGCATATAACGTTTTTCACGACACAATCAACTCAAGCCCATGACGTGGGGCTTAGCAACTAATTTCCCCTCCACAAAGAAGAGGAGTCTGGGGTAACGTAAGGCGGCCAGTTGTCCACAGAACACGTTTAAGTATAGAACGAGCAAATTTCAGCCAAGAGAGAATTAAACACGTATATAGAGCGGGACTTCCACCAGTCTCCCCACTAGGAATCGACGGAGACCACAGCCAGTGGAATGGATACGTTCCCTATTGGGCACAATCGAACACGACCGGAGCCGGCACAAGAGTGCCCCCCCCGCTACCTGATATCGTAAATGCGGAGGTTATGAACTGAGGCAATGTCGCCTCCTGGGGATCCACCGGTGAGGGCGATAGTTCGTGCCCATCGACGGAAGCTCTACGGACATTCGAACTGGAGATGGACGGAGATCTGAGACGCGCAAAGAAGACGACCCCGGGTTTAGAAGATTCAATTCAGTA"/>
+                    <sequence id="seq_t10" spec="Sequence" taxon="t10" totalcount="4" value="TATATCCGGGTTCTCTGCCCGGGGCGCATCTGTTCGTCTAAGAAGAGCGCGACAGATATAAGCTGAAATACTGGCTTCTTTCCGGTCGTACACGCAGGGCCATCGTGTCACCGACGCCGGGAGTGTCACCCAGGTAGTTTTATCTTTTCATCCTAGGTTCTATTTACCTCGCTCAGACACGTTTATAAATGTCATTAAATTTGGATGTACGTCGGAGCTAGACGGACACTATTACGGGCATTTGTACTTAACATACATCGGAGCACAAGCAAAATCATCTACATTAGAGGCACAGTACATCAGCAGAATCCCCTTGGTACGCCACCGGTCTTTATCACCAGTTGGGTTCATTCTACTTCTCTCGGTAGACCAGTAAGCCCTAAGCGTGCACCGCCATAGTCTGCAGTGGCCCGGACGACCCCCGCCAGCACACGAGTAGTTACAGAATTGCTTCAGTTGCCATAAGAGCTATGTCGGCGCAACGTACGCGGGCCGCATAGGTACCCAAAGAAGGAGGCTCAGGAAACATTTTTCCCAACACTCTCACCTCAAGTACTTGGTGACAGTGATCGAAACTAAATTCCCCTCCACCAAGATGAAGAGGCGGGGAGAACTTCAGGCTCCAAGTCTGCCACGGAACGAATTTACGTGTTGATTGTGCAGGTGTCAGCCAAGAGATAAGTAAACACGAATACAGGGAGGGTCTCCCAGCAGTGTCCCCACTAGGTATCTACGGCGGCCACAGCCACAAGAATCGGCTCCTTCCCTATTGGGCACAACCGAACACGGCTTGAGCCGCCCCAAGTCTGCATCCCCCGCAACCTTATATCGTAAAAGCGCAGTTGATGATCGGATCCAATTTCGCCTCCTGCGGATCCAACCGTATGGACGATAGTTCGAATCATTCGATAGACGCTCTTGGGATAGTTGAACTCGAGGTCGCCGGAGAGTTGACACGCGGACGGGAGACGACCCCGGGGTTAGAAGATGCCGTTCAGTA"/>
+                    <sequence id="seq_t2" spec="Sequence" taxon="t2" totalcount="4" value="TATATCCAGCTTCTCAGTCCCGTGGGCATCAGTTGGTCTCAGAAGAGGGCGACTGTTATGAGCTAAAACACTGGCCTCTCTCCCGTCTTACACGTCGGTCCATCGTGTGCTAGATGCCCGGTGAGCCACCCATGTAGTTTCATATTTGCATCATATGTTCTATTCAACACCCTCACGCACAGTTATAAATGTCTTTAACGTTTTCTGTACGTAAGCTCTATTGCGCCACTTTCACGGGCATATGTACTTAACTTACAACGGAGCGGAAGCTGATTAATCTTCATGCTATGCCCAGATCAATACCAGACTCTGCGTGGTAAGACAACGCCCCCTATCTCCATCAGTGCTCATTCCACTTCGCTCGGCAGCACAGTTAGTCTTAAGCGCGCACCGCCATAGTCTGCAGTGGCGCGGCCTACCCGCGCCCGCAGAGGAGCTGCCACAGGATAGCTTCGGTCGCCTTAATCGCTTGGTCTGTGCACCTTAGGCGGGCCCAAAAGGTGCCCAGAGAGGCATGCGCATCTAACGTTTTTCCCGACACCATCAACTCGAGCCCATGAAGAGGGCGATAGAAACTAACTTCCCCTCCATAAAGACGAGGCGGGTGGGAGAACGTAAGGCTCCCAGTCGTCTACATAACGCATTTACTTATAGATCGTGCAAATTTCCGCCAAGAAATAAATAAACACGTATATAGGGTGGGACTCCCACCAGTCTCTCCACTAGCAATAGACGGCGACCACAGCCACAGGGATGAGTACCTTCCCTATTGCGCACAATGGAACACGGTCGGAGCCGGCACAAGCATGCCCCCCCCGCCACTTGATATCGTAAATCCGAAGGTTATTATCTGATGCAATGTCGCCTCCTGGCGATCCACCGGTGAGGGCGATAGTTCGTACCCATCGACAGAAGCTCTTCCGACATTTGGACTCGAGATCGACGGAGATATGATACGCGCATAGAAGACGAGCCCGGGGTTAGAAGGTTCCGTTCAGTA"/>
+                    <sequence id="seq_t3" spec="Sequence" taxon="t3" totalcount="4" value="TCTTTTCGGGTGCTCTGCCCCAAAATCCCCTGGTCGTCTCGGACGTGGCCTAAAGATGACAGGCCAAAGACTGACCACTATTCGGCCGCACCCGGCAGAACATCTTGCCCTCTCGGTCCAGACGGTGAACCGAAAACTTTTATCCCCGCACTGACAGTAGTCTTCTAGACCATCACGCACCGATAAAACGGTCATAATCAGTGTCGGTACTTGTGCTACTGAACGCAGCAGTCATGGGTACCGTCACTTAAATGAACACGAAGCATGAGCTAATTATTAGACATCGAGAGCAGCTAACATCATCACAGTACCGGTTATGTGACAACCCCGCATGTCACCGATCGTGTTCAATCCACTTGATTCGAGCGCACACTCCGCACCAGTTACGTACTCGCTTTCTCAGCCGTGCCCCGGCAGCTAGACGACTCCGCAGGAGGAGGCAAACGAGAGTTTAGGTGGGCTCTACAGTTTGTTATGGACCCCTTGCGCGGTCCAGAAAAGTCCTCTTAGAGGCAGGCCCGTGAGTCGTTCTTTCGGACACAAGAACCCCAAGCCCTTAATGGCCTTAATCGATAATAGATACCACTTAGCTGCGGTGAAGATGGGGGGGGTAGTTAAGGCTCCTAGTGACCGTCAGTATGGACTATCGTAGTGACTGTACAGACTCCAGCCATGCGGGATGTAAGCAATATTATAGGTAGGGAATGTCACCAGTTGCAATAATTGGTATTGACGGCGCCCTTTCCCCCCAGAATTGTCTCCTTCCTAAGACGAGAGTATATTAGGATGCCGGATCCATTACACGTAGGCGTTCGCCACTAAAGGTTTTCAAAAAGGAGCAGATGAGGGTCGGATGCAATGTCCCCTCCTGGGTATCGACCCGAGCAGGGGATATTTCGTGACGATGAATAGCAGACATTCCGACTGTGACATGCAGGATATGCGGAATAAAGAGATACGGTCCGGATACCGGAAAGGGGCTAGAAGCTTCCGTAGCAAC"/>
+                    <sequence id="seq_t4" spec="Sequence" taxon="t4" totalcount="4" value="TCTATTCGGCTTTTCTGCCGCCTGAGCATCTGGTCGTCTACGAAGAAGGCGACTGAGTGAAGCTGAAACACTGCCCCCCTTCCAGTCCAACACGCCGAGTCATCGTGTCCAAGATGTCTGGAGTGGCAGCCATGTCGTTAGATCTTAGCATCATATGTTCTATGCAATACTGTCACGCACGTTTAATAAAGTCATTAATGGAGTCTGAACGTAGGCGTTAAACCGCCACTAAGACGGGCATTCGTACTGATCTTACAACGAAGCACAAGCTAGTTAATTGTCATTAACTAAAGATAACAGCAGCAGACTGCGCTTGCTAAGACATCACCCCTGACCGCCATACGTATATATTCATCTTCGTTCGCAAGCCCAGTCAGCCCTAAGCATGCACCGACATAGTGTGAAATGGCCCGGCCGACCCACTCCAGTACAGGAGCAGTCACAGGATAGCTTCGTGTGCCTTAATAGCTCAATCTGCGGGCGTTAGACGCGCCAAAACGATGCCCACAGAGTCAGGCCCATGAAACATTTATGCCGTCACGATCACATCCGGTCTCTGGTGGTGGTGATAGATACGAAATTTCCCTCCACTAAGATGAACAGGCGGGGAGAACTTCAGGCTCCCAGTCGGGCCCAGAACGCATTTGGCTTTTGATTGTGTAGATTTCAGACAAGTGATTAGTAAGCACCAATACAGGGAGGGACTCCCACCAGTCTCCCCAACAGGTATCTACGGCGACCACAGCCACGAGAATCGCCCTCGTCCTTGTTAGTCATAATATAAGAATGCCGGAAGCGGCCTATGACTGCACCCCCCTCTACCTGATATCGAAACAGCGCAGGTGATTATCTGATGGAATATCGCCTCCTGGGGATCCACCCGTCGGGGCGTTAGTTCGTATCAATCGGTTGAAGCTCGACGCAAAGTTGAACTCGAGATTGCCGGACATATGAGACCCTGAGACGTAACTAATCCTGCGTCATAATATTCCGTGCAGTA"/>
+                    <sequence id="seq_t5" spec="Sequence" taxon="t5" totalcount="4" value="TCTATTCGGCTTCTCTGCCGCCTGAGCATCTGTTCATCTCAGAACAAGGCGATGGAGTGAAGCCGAAACACTGCCCTCTTTGCGGTCGAACACGCCGTGCCATCGTGTCAAAGATGCCCGGAGTGGCAACCATGTCGTTTGATCTTAGCGTCATATGTACTATGCAATACTCTCACGCACGTTTATTAAAGTCATTAACGGAGTCTGTACGTAGGCGTTAAAGCCCGACTAAGACGGGCATTTGTACTGTTCTAACAACGCAGCACGAGCTAATCAATCGGCATCAACTAAAGGGAACAGCAGCAGACTGCGCTTGCTAAGAAATCGCCCAGGACCACCAAACGTATATATTCTTCTTCGTTCGGAAGCCCAGTCAGCCCTCGGCATGCAACGACATAGTGTGAAATGGCCCGGCCGACCCACGCCAGCACATGAGCAGTCACAGGATAGCTTCGGGTGCGTTAATAGCTCAATCTGCGGGCGATAGAAGCGGCAAAAAGATGCCCACAGAGTCAGGCCCATGAAACCTTTTTGCCGTCACGATCACCTCCGGTCTCTGGTGGTGGTAATAGAAACTAAATTTCCCTCCACAAAGATGAACAGGCGGGGAGCATTTCAGGCTCCCAGTCGGGTCCAGAACGCATTTGGCACTTGATTGTGTAGATTTCGGACAAGTAATGAGTAAGCACCAATACAGGGAGGGTCTCCCACCAGTCTCCCCAACAGGTAGCTACGTCGACCACCGCCACTAGAATCACCCTCGTCCTTGTGAGTCACAATACTAAAATTCCGGAGGCGGCATATGACTGCATCCCCCTCTACCTGATACCGTAACAGAGTAGGTGAGTATCTGATGGAATATCGCCTCCTGGGGATCCACCCGTGGAGGCGTTAGTTCGTATCAATCGGATGAAGCTCGACGCAAAGTTGAACACGAGACTGCCGGAGATATGAGACGCTGAGACGTGACTAATCCTGGCTCATAAGATTCCTTGCAGTA"/>
+                    <sequence id="seq_t6" spec="Sequence" taxon="t6" totalcount="4" value="TGTATTGGCCTTCTCCGTCCCCATAACACTTTGTCGGCTTAAACCAGGTCTAATTCGGAGAGATGACACACCTACCACTGTTCGGATCCAAATTTCAGGCAATCTCTACAGAGATGCCCCGACTATTAGCCGTATAATTTAATTCTTGCATCCAAAGTTGTCTTCTATAATCTCACGCACGGTTTAAATACTGTTGACTACTGCCTGTACATATCCGACTGGGCCCCGTTATCACGCGCATTTTCGTTCAACTCACAAGATAGCACAAGAAACTTACGCATCATTATAGGCTGCAAACATCAGTAGCCTGCCTGTGAGGAGACAGTGGCCCTTATCACCGAAAGCGTTCAGTGTACCCCGCTGGCGGGCACCATCTGCACTATTCATGAATTCGTTGCGTGTGCCGTCCCCCCGCCGCGCGACGACAGGCCGAGAGCAGACAAACCCGAGTGGAGTTTGCGTGGCGCGGAAGTTATGGACTCCTAAAGCCGGCTATATCGGTGGCCCGAGAACCCCGCTCTGAAAAAGCATTTATTGATACAATCCCCCCAAATTCTCAATAATGATATTACCTACTAAATTGCCCTCACAAATGAAAAAGTCCGGAGCAGGAGTAGCGCCTCCGAGTTAGCGTCAGGACTCATTACCGATTTCAGCGTGGAGGGTACATCCATGAAACACTGATGCGCTATAATAAGAAGGGAACCTCAACAGTTGCCCTATGCGGTGTGTACGGCCACATGTCTAACAAGAAACCGCTCGTTCCCAACTCCAGAGTATAATACAAGGCCGAATCCTGTACGGGGATGCCAAAGCGGCTACTGTTTACGGACAACTAGGACATGACGGTCTAATTCAACGTCGGCTCCTTTGTATCGTCTCGTGCCGGCTATCGCTCGGGCTCGTGGATAGCACCGCACCCGACTATCAGCATCGGCGGAGGCGGAAATAAGAGACATGGTTGGGTGGCGAGCCCGGGCTTGGAATATCAAGACCCGCC"/>
+                    <sequence id="seq_t7" spec="Sequence" taxon="t7" totalcount="4" value="TCTTTTTGCCCGCTCAGCGCCCATAACCCCTATTTCTCTCACAAGTCGACTAAAGACGAGAGTCCTTACACTGACCTCTATTCGTCTGCACACGTCAGACCAGCTCGCCAGAGCGGGCTGAACTGTGACCAGTAAGATTTTACCCGTGCACCGAAAGCTGTCCTTTACAATATCAGGCACGGGTCAAACACTGTTATACTGTGTCTTTAATTGTGTTATTCAACGCTGCAATCGCGGGGAACTACACTTAAGGAGAAAGGTCGCAGAATAGATCTTCTGGTCATCGACTGCAGCTAACATCAGTAGACAGCCGGCGATGCAACAACCCCCGTAGTCATCGAACTTGCTCAATCTACGTGACTGGAGAGGACAGGCAGTAATAATGGCGAACTCACTTTCTCTGCCGTGCTCCGGCATCAAGACGAATGCCCAGGAGCAGGCAAACGAGAGTTTAGGTGGCCCCACGAGTTCAGGGCGGTCACCGTAGGTTGTCCACAAAGGTCCACCTAGAGCCAGGCTCCCGAAACTCTTTTTCAGACACAAGAACCCCAAGCCCCGAATTATCTTATTACGTACCAAATACCGTTCAGCAATGGGGAAGAGGGGGGGGTGAGTTAAGGCTTCCAGTGCGCGACAGTACTGATTGAGGGCCTGACTGTACAGACTCGAGCAATCCGATATGTAATCGCGATAGTAGGGAGGGAATGTGACCCGTTGCGCTAATCGGTGGTGCCGCAGTCATTTCCCACGAGAAATGCACCGTTCCCAGTTTTTTAGTATAATCGAACGCTGGATCATGTAGACGAATGCCTTTGACTCTACAGTGTATGTTATAAGGGCAAATGACGTACTTCCGAAAAGTCTCTTCCTAGGCATCGACCCGTGCGGGCGGTAGTTCGTACCTCTGAACAAGGGCTCATCCGATTGTAGACCGTGGGATAGGCGGGAAAAAGTGTCACGCTCTGGAGAGCACCCAGAGGTTAGAAGATTATGTTCTGAT"/>
+                    <sequence id="seq_t8" spec="Sequence" taxon="t8" totalcount="4" value="TCGATTCTGCTTCTCTGACCCCATACCCGGAGGCTGAGGAAGAAGGGGTCTATCGAGTACAGGTTATACAATGAACCATATTAGGCCGCACACGTATGGCTATCTTGACAGTGATGCCCGGACGGTTACCCGTATCTATCTAATCTCGCATGGATAGTAATACTCTTTACTTTCGCGCACTGTTGAAGCAGTGTTAAACTGTCCCTATACTCATGCGATTGAAATATGCCAGCGCGGGAATTTGTATTTCACTAACAACGAAGCAGGAGCTCCTTACTAATGATATAGGTGAGGTACGTTTAGCACACTGTCTGTGAAAAGCCAACAGTCCTTCTCACGGAAAATGTCCAGCCTCCATCGGTCTAGCGCCCAGTCTGCACTAATGATGGATTTGCTGACGCGGCTCTGCCCCGGCTGGACGCCTACATCGCAGGAGCAGACAAACCCGCATGAAAGTGGCCTGACGAGATCCTTATGCACACCTTGGGCCGTCTAGATAGGTCCACTTAGAGCCAGGCTCACGTCACGCTGTTTCGGACACAATGACTCCAATCCCCGTGAGTTGGTATGGCATACTAAACACCGCTCAAATATTCAAAATGAGGGGGGGGGGGTAAAGGCTCCAATTTCGTGTCTGTGATCATTACCGGCGTGACCCTGCAGACTGCAGCAAACCCACTTGTATCAGACATAATCTGGACTGAATGTGGCCACTTGGCCAAGTCTATAACGAATTCCACTTATCCCACCGTAAAGGCCCCCTTCGCAAACCGAGCGTCTAACACAATGCGTGATCCTGCACAAGAGTGTCTCTATCCCTACCGGTTAAGGTAAAAGTGCCGAATACGGTCTTTCGCAATTGCGAGTCCTGCGATTTCTTCCGAGGCGGCCATATTTGGTGACAATGAATGGCTGGACTTTCCGCTGCGGAATTCGGGATAGGCAGTATGAAGCGACCCAGTTTGAAGAAAAGTTAGGGGATAGAATATTTCGATCCGAC"/>
+                    <sequence id="seq_t9" spec="Sequence" taxon="t9" totalcount="4" value="TCTTTTCGGGTGATCTGCCCCAATAACACCTGGTCTTCTCAGACGTGGACTTAAGATGGGGGGCCATAGACCGACCACTATACGGCCGCACACGGCAGTCCATCTCGCCCGAGCGGTCTAGAGGGGGAGCCGTAAACTGTTTCCCTCGCACCTGCAGTAGTCCTCAAGAACATCACGGAAGGATAAAACGGTGATAAACAGTGTCTGTACGAGAGTTACTGAACGCAGAAATCATGAGCACCGTTACTTAACTGAACACGAAGCATGAGCTACTTATCAGATATCGAGTGCAGCTAACATCAGCCCACTACCAGTGATGTAACAACCCCGCTTGTCAACGAACGTGTTCAATCCACTTAACTCGAGCGCACAGTCCGCACTAGTCGCGAACTCGCTTTGTCTGCCGTGCCCCGGCAGCAAGACCCCTCCTCAGATGTAGTTAAACGTGAGTGTCGGTGGCCTCCACAGTTCATAATGGTCCCCTAGTGCGGTCCAGAAAGTTCCGCTGAGACACAGACTCATGAATAGTTTTTTCGGACACGAGCTCCCCAAGCCCCGAATGGTATAAATGGCTACTATATACCACTCTCCTACGGTCAAGAGGGGGCGGGTAGTTACGGCACCCAGTGAGAGGCAGTACGGACTATCGGAGTGACTGTACAGCCTCCAGTCATGGGGGATGTAAGCAGTATTATGGGGTGGGAATGTCACCAGTTGCATTAATTGATATTCACGGCGGCCTTTCGCACCAGCATTGCCTCCTTCCTAAGTCGAGAGTATATTAGGTTACCGGATCCTGTACACGTAGGCGTTCGCCACTGCAGGGGTAGCAAATAAATCGGATGACGGTCTTATGGAATGCCCCCTCCGGGGCAGCGAACCTAGCAGGCGAAATTTCGTCCCCACGAATAACAGTCAGTCCGGCTGCTAAATGCGGGATAGGCGGAAAAAAGAGATACGGTCTAGATACCGGACAGGGGATAGAAGCTACCGTTCCAAC"/>
+                </data>
+
+
+    
+
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+<run id="mcmc" spec="MCMC" chainLength="1000000">
+    <state id="state" spec="State" storeEvery="5000">
+        <tree id="Tree.t:SimulatedDNA" spec="beast.evolution.tree.Tree" name="stateNode">
+            <taxonset id="TaxonSet.SimulatedDNA" spec="TaxonSet">
+                <alignment idref="SimulatedDNA0"/>
+            </taxonset>
+        </tree>
+        <parameter id="BDBirthRate.t:SimulatedDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="10000.0">1.0</parameter>
+        <parameter id="BDDeathRate.t:SimulatedDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
+        <parameter id="clockRate.c:SimulatedDNA" spec="parameter.RealParameter" name="stateNode">0.02</parameter>
+    </state>
+    <init id="NewickTree.t:SimulatedDNA" spec="beast.util.TreeParser" estimate="false" initial="@Tree.t:SimulatedDNA" newick="((((t7:22.13461605,(t3:10.61541582,t9:10.61541582):11.51920023):9.347589267,t8:31.48220532):1.155668265,t6:32.63787358):7.362126418,((t2:9.626874643,t1:9.626874643):10.52231854,((t4:5.712761515,t5:5.712761515):11.75937652,t10:17.47213803):2.677055151):19.85080682)" taxa="@SimulatedDNA0"/>
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="BirthDeath.t:SimulatedDNA" spec="beast.evolution.speciation.BirthDeathGernhard08Model" birthDiffRate="@BDBirthRate.t:SimulatedDNA" relativeDeathRate="@BDDeathRate.t:SimulatedDNA" tree="@Tree.t:SimulatedDNA"/>
+            <prior id="BirthRatePrior.t:SimulatedDNA" name="distribution" x="@BDBirthRate.t:SimulatedDNA">
+                <Uniform id="Uniform.3" name="distr" upper="1000.0"/>
+            </prior>
+            <prior id="DeathRatePrior.t:SimulatedDNA" name="distribution" x="@BDDeathRate.t:SimulatedDNA">
+                <Uniform id="Uniform.4" name="distr"/>
+            </prior>
+            <prior id="ClockPrior.c:SimulatedDNA" name="distribution" x="@clockRate.c:SimulatedDNA">
+                <Uniform id="Uniform.22" name="distr"/>
+            </prior>
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.SimulatedDNA" spec="ThreadedTreeLikelihood" data="@SimulatedDNA0" tree="@Tree.t:SimulatedDNA">
+                <siteModel id="SiteModel.s:SimulatedDNA" spec="SiteModel">
+                    <parameter id="mutationRate.s:SimulatedDNA" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                    <parameter id="gammaShape.s:SimulatedDNA" spec="parameter.RealParameter" estimate="false" name="shape">1.0</parameter>
+                    <parameter id="proportionInvariant.s:SimulatedDNA" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="JC69.s:SimulatedDNA" spec="JukesCantor"/>
+                </siteModel>
+                <branchRateModel id="StrictClock.c:SimulatedDNA" spec="beast.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:SimulatedDNA"/>
+            </distribution>
+        </distribution>
+        <distribution id="fossilCalibrations" spec="util.CompoundDistribution">
+            <distribution id="ct1.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.0" spec="beast.math.distributions.FossilCalibration">
+                    <parameter id="RealParameter.88" spec="parameter.RealParameter" name="minOccuranceAge">1.1</parameter>
+                    <parameter id="RealParameter.89" spec="parameter.RealParameter" name="maxOccuranceAge">1.1</parameter>
+                    <parameter id="minDivRate" spec="parameter.RealParameter" name="minDivRate">0.1</parameter>
+                    <parameter id="maxDivRate" spec="parameter.RealParameter" name="maxDivRate">0.1</parameter>
+                    <parameter id="minTurnoverRate" spec="parameter.RealParameter" name="minTurnoverRate">0.0</parameter>
+                    <parameter id="maxTurnoverRate" spec="parameter.RealParameter" name="maxTurnoverRate">0.0</parameter>
+                    <parameter id="minSamplingRate" spec="parameter.RealParameter" name="minSamplingRate">0.05</parameter>
+                    <parameter id="maxSamplingRate" spec="parameter.RealParameter" name="maxSamplingRate">0.05</parameter>
+                </fossilDistr>
+                <taxonset id="ct1" spec="TaxonSet">
+                    <taxon id="t1" spec="Taxon"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct10.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.01" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.92" spec="parameter.RealParameter" name="minOccuranceAge">6.01</parameter>
+                    <parameter id="RealParameter.93" spec="parameter.RealParameter" name="maxOccuranceAge">6.01</parameter>
+                </fossilDistr>
+                <taxonset id="ct10" spec="TaxonSet">
+                    <taxon id="t10" spec="Taxon"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct1t2.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.011" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.3" spec="parameter.RealParameter" name="minOccuranceAge">7.68</parameter>
+                    <parameter id="RealParameter.4" spec="parameter.RealParameter" name="maxOccuranceAge">7.68</parameter>
+                </fossilDistr>
+                <taxonset id="ct1t2" spec="TaxonSet">
+                    <taxon idref="t1"/>
+                    <taxon id="t2" spec="Taxon"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct1t2t4t5t10.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.02" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.1" spec="parameter.RealParameter" name="minOccuranceAge">13.29</parameter>
+                    <parameter id="RealParameter.2" spec="parameter.RealParameter" name="maxOccuranceAge">13.29</parameter>
+                </fossilDistr>
+                <taxonset id="ct1t2t4t5t10" spec="TaxonSet">
+                    <taxon idref="t1"/>
+                    <taxon idref="t10"/>
+                    <taxon idref="t2"/>
+                    <taxon id="t4" spec="Taxon"/>
+                    <taxon id="t5" spec="Taxon"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct2.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.03" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.86" spec="parameter.RealParameter" name="minOccuranceAge">0.49</parameter>
+                    <parameter id="RealParameter.87" spec="parameter.RealParameter" name="maxOccuranceAge">0.49</parameter>
+                </fossilDistr>
+                <taxonset id="ct2" spec="TaxonSet">
+                    <taxon idref="t2"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct3t6t7t8t9.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.04" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.100" spec="parameter.RealParameter" name="minOccuranceAge">15.22</parameter>
+                    <parameter id="RealParameter.101" spec="parameter.RealParameter" name="maxOccuranceAge">15.22</parameter>
+                </fossilDistr>
+                <taxonset id="ct3t6t7t8t9" spec="TaxonSet">
+                    <taxon id="t3" spec="Taxon"/>
+                    <taxon id="t6" spec="Taxon"/>
+                    <taxon id="t7" spec="Taxon"/>
+                    <taxon id="t8" spec="Taxon"/>
+                    <taxon id="t9" spec="Taxon"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct3t7t8t9.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.05" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.98" spec="parameter.RealParameter" name="minOccuranceAge">15.22</parameter>
+                    <parameter id="RealParameter.99" spec="parameter.RealParameter" name="maxOccuranceAge">15.22</parameter>
+                </fossilDistr>
+                <taxonset id="ct3t7t8t9" spec="TaxonSet">
+                    <taxon idref="t3"/>
+                    <taxon idref="t7"/>
+                    <taxon idref="t8"/>
+                    <taxon idref="t9"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct4t5t.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.06" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.90" spec="parameter.RealParameter" name="minOccuranceAge">8.6</parameter>
+                    <parameter id="RealParameter.91" spec="parameter.RealParameter" name="maxOccuranceAge">8.6</parameter>
+                </fossilDistr>
+                <taxonset id="ct4t5t" spec="TaxonSet">
+                    <taxon idref="t4"/>
+                    <taxon idref="t5"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct4t5t10.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.07" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.96" spec="parameter.RealParameter" name="minOccuranceAge">8.6</parameter>
+                    <parameter id="RealParameter.97" spec="parameter.RealParameter" name="maxOccuranceAge">8.6</parameter>
+                </fossilDistr>
+                <taxonset id="ct4t5t10" spec="TaxonSet">
+                    <taxon idref="t10"/>
+                    <taxon idref="t4"/>
+                    <taxon idref="t5"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct5.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.08" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.94" spec="parameter.RealParameter" name="minOccuranceAge">2.21</parameter>
+                    <parameter id="RealParameter.95" spec="parameter.RealParameter" name="maxOccuranceAge">2.21</parameter>
+                </fossilDistr>
+                <taxonset id="ct5" spec="TaxonSet">
+                    <taxon idref="t5"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct6.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.09" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.102" spec="parameter.RealParameter" name="minOccuranceAge">11.17</parameter>
+                    <parameter id="RealParameter.103" spec="parameter.RealParameter" name="maxOccuranceAge">11.17</parameter>
+                </fossilDistr>
+                <taxonset id="ct6" spec="TaxonSet">
+                    <taxon idref="t6"/>
+                </taxonset>
+            </distribution>
+            <distribution id="ct8.fossilprior" spec="beast.math.distributions.FossilPrior" monophyletic="true" tree="@Tree.t:SimulatedDNA" useOriginate="true">
+                <fossilDistr id="FossilCalibration.010" spec="beast.math.distributions.FossilCalibration" maxDivRate="@maxDivRate" maxSamplingRate="@maxSamplingRate" maxTurnoverRate="@maxTurnoverRate" minDivRate="@minDivRate" minSamplingRate="@minSamplingRate" minTurnoverRate="@minTurnoverRate">
+                    <parameter id="RealParameter.104" spec="parameter.RealParameter" name="minOccuranceAge">15.22</parameter>
+                    <parameter id="RealParameter.105" spec="parameter.RealParameter" name="maxOccuranceAge">15.22</parameter>
+                </fossilDistr>
+                <taxonset id="ct8" spec="TaxonSet">
+                    <taxon idref="t8"/>
+                </taxonset>
+            </distribution>
+        </distribution>
+    </distribution>
+    <operator id="BirthDeathTreeScaler.t:SimulatedDNA" spec="ScaleOperator" scaleFactor="0.5" tree="@Tree.t:SimulatedDNA" weight="3.0"/>
+    <operator id="BirthDeathTreeRootScaler.t:SimulatedDNA" spec="ScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:SimulatedDNA" weight="3.0"/>
+    <operator id="BirthDeathUniformOperator.t:SimulatedDNA" spec="Uniform" tree="@Tree.t:SimulatedDNA" weight="30.0"/>
+<!-- <operator id="BirthDeathSubtreeSlide.t:SimulatedDNA" spec="SubtreeSlide" tree="@Tree.t:SimulatedDNA" weight="15.0"/> -->
+<!-- <operator id="BirthDeathNarrow.t:SimulatedDNA" spec="Exchange" tree="@Tree.t:SimulatedDNA" weight="15.0"/>  -->
+<!-- <operator id="BirthDeathWide.t:SimulatedDNA" spec="Exchange" isNarrow="false" tree="@Tree.t:SimulatedDNA" weight="3.0"/> -->
+<!-- <operator id="BirthDeathWilsonBalding.t:SimulatedDNA" spec="WilsonBalding" tree="@Tree.t:SimulatedDNA" weight="3.0"/> -->
+    <operator id="BirthRateScaler.t:SimulatedDNA" spec="ScaleOperator" parameter="@BDBirthRate.t:SimulatedDNA" weight="3.0"/>
+    <operator id="DeathRateScaler.t:SimulatedDNA" spec="ScaleOperator" parameter="@BDDeathRate.t:SimulatedDNA" weight="3.0"/>
+    <operator id="StrictClockRateScaler.c:SimulatedDNA" spec="ScaleOperator" parameter="@clockRate.c:SimulatedDNA" weight="3.0"/>
+    <operator id="strictClockUpDownOperator.c:SimulatedDNA" spec="UpDownOperator" scaleFactor="0.75" weight="3.0">
+        <up idref="clockRate.c:SimulatedDNA"/>
+        <down idref="Tree.t:SimulatedDNA"/>
+    </operator>
+    <logger id="tracelog" spec="Logger" fileName="SimulatedDNA.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.SimulatedDNA"/>
+        <log id="TreeHeight.t:SimulatedDNA" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:SimulatedDNA"/>
+        <log idref="BirthDeath.t:SimulatedDNA"/>
+        <log idref="BDBirthRate.t:SimulatedDNA"/>
+        <log idref="BDDeathRate.t:SimulatedDNA"/>
+        <log idref="ct1t2t4t5t10.fossilprior"/>
+        <log idref="ct1t2.fossilprior"/>
+        <log idref="clockRate.c:SimulatedDNA"/>
+        <log idref="ct2.fossilprior"/>
+        <log idref="ct1.fossilprior"/>
+        <log idref="ct4t5t.fossilprior"/>
+        <log idref="ct10.fossilprior"/>
+        <log idref="ct5.fossilprior"/>
+        <log idref="ct4t5t10.fossilprior"/>
+        <log idref="ct3t7t8t9.fossilprior"/>
+        <log idref="ct3t6t7t8t9.fossilprior"/>
+        <log idref="ct6.fossilprior"/>
+        <log idref="ct8.fossilprior"/>
+    </logger>
+    <logger id="screenlog" spec="Logger" logEvery="1000">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+    <logger id="treelog.t:SimulatedDNA" spec="Logger" fileName="$(tree).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:SimulatedDNA" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:SimulatedDNA"/>
+    </logger>
+    <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+</run>
+</beast>
