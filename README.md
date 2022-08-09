@@ -4,7 +4,7 @@
 
 _Department of Natural History, Royal Ontario Museum, and Department of Ecology and Evolutionary Biology, University of Toronto_
 
-Functions and code used in the paper "CladeDate: empirical calibration density generator for divergence time estimation" (Claramunt 2022 Methods in Ecology and Evolution), including the first published version of the R package CladeDate (Version 1.0). The most updated version of CladeDate is in https://github.com/evolucionario/cladedate.
+Functions and code used in the paper "CladeDate: calibration information generator for divergence time estimation" (Claramunt 2022 _Methods in Ecology and Evolution_), including the first published version of the `R` package `CladeDate` (Version 1.0). The most updated version of `CladeDate` is in https://github.com/evolucionario/cladedate.
 
 
 ## Content:
