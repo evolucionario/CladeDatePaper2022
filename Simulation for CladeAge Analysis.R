@@ -2,24 +2,18 @@
 ### Simulation for the CladeAge Comparison ###
 ##############################################
 
-### Simulation that creates a dataset (tree, fossils, DNA alignment) to be used with CladeAge and BEST2 so the results can be compared to the new CladeDate + Chronos
-
-# Results are pretty similar. A critisism may be that these are clock tree analyzed under a strict clock, so it can be argue that it is a simple situation and any method would perform well. Maybe repeat the analyses using the non-clock perturbation (preserving the topology so no need to redefine clades in the xml file)
-
-# Also, I used the true simulation parameters for speciation, extinction, and fossil recovery rate, making things extra easy. Maybe change for a range to test the robustness of the method.
+### Simulation that creates a dataset (tree, fossils, DNA alignment) to be used with CladeAge and BEST2 so the results can be compared to the new CladeDate + Chronos.
 
 
-
-setwd("~/Documents/Avian Time Trees/CladeAge Simulations Beast")
+library(TreeSim)
 
 
 #####################
 ### Simulate tree ###
-#####################
 
 SEED <- 99
 
-# using TreeSim function in a repeat loop to make sure basal sister taxa both have more than 2 species (so at least one internal node)
+# using TreeSim function in a 'repeat' loop to make sure basal sister taxa both have more than 2 species (so at least one internal node)
 # balance calculates the numer of descendants for each dougther clade and the first entry is the root node
 
 tr <- sim.bd.taxa.age(age=AGE, n=10, numbsim=1, lambda=0.1, mu=0, frac = 1, mrca = TRUE)[[1]]
@@ -58,12 +52,16 @@ plot(tr2); axisPhylo()
 
 #is.ultrametric(tr2); is.binary(tr2)
 
+### END OF TREE SIMULATION ###
+##############################
 
-####################################
-### Simulate molecular sequences ###
-####################################
 
-# Basic method with high stochasticity due to short sequence
+
+
+###################################
+### GENERATION OF DNA SEQUENCES ###
+
+# Basic method with high stochasticity due to short sequence length
 # The idea is that the sequences, which are simulated in a strict clock fashion, do not dominate the results
 
 # JC model:
@@ -73,21 +71,11 @@ DNA <- simSeq(tr2, l = 1000, type = "DNA", rate = RATE)
 
 write.FASTA(as.DNAbin(DNA), file=paste0("SimulatedDNA0.fas"))
 
-
-## Alternative ##
-# Add a jiggle to branch lengths to simulate rate heterogeneity
-#tr2 <- tr
-#tr2$edge.length <- tr$edge.length * rlnorm(length(tr$edge.length), 0.1, 0.3)
-#tr2$edge.length <- tr$edge.length * rnorm(length(tr$edge.length), 1, 0.3)
-#plot(tr2)
-# JC model with long sequences so the data carry the non-clock signal
-#DNA <- simSeq(tr2, l = 4000, type = "DNA", rate = 0.02)
-# But makes estimation more dificult, involvining the clockrate
+### END ###
 
 
 ######################################################################
 ### Infer a ML tree with DNA sequences and fixed original topology ###
-######################################################################
 
 MLfit <- pml(tr2, DNA, rate = RATE)
 
@@ -98,7 +86,7 @@ MLtree <- optim.pml(MLfit)
 
 plot(MLtree)
 
-# Reroot the tree #
+# Root the tree #
 
 MLtree2 <- root(MLtree$tr, outgroup="og")
 
@@ -117,11 +105,9 @@ MLtree3 <- read.tree(file="EstimatedML0.tre")
 
 
 ####################################
-### Simulate fossils on branches ###
-####################################
+### Simulate Fossils on Branches ###
 
-### Different fossilization in different clades ###
-
+### Different fossilization rates in different clades ###
 
 # Find the two descendant nodes of the root node
 
@@ -133,7 +119,7 @@ branches.clade2 <- length(Descendants(tr, node=calib.nodes[2], type="all"))
 
 
 # Create vector of rates (one per branch)
-# first value for the root edge that is zero but exists
+# first value for the root edge that is of length zero but exists
 
 Rates <- c(rep(0.1, Nedge(tr)-branches.clade2), rep(0.5, branches.clade2))
 
@@ -165,10 +151,11 @@ save(Fos2, file=paste0("FossilSim0.R"))
 load(file="FossilRecordClade1.0.R")
 load(file="FossilRecordClade2.0.R")
 
+### END ###
+
 
 #############################################
 ### Estimate Clade Age from Fossil Record ###
-#############################################
 
 # Using the StraussSadler method and the gamma function to simplify
 
@@ -281,20 +268,19 @@ Chronobt <- branching.times(Chrono)
 
 plot(truebt, Chronobt, las=1); abline(0,1)
 
-### Pretty good CladeDate + Chronos!!!!
-
 
 
 ### Source compareBTs function to compare correct branching times
 # (ladderize and order are not putting the trees in the same order for some reason)
 
-source('~/Google Drive/Big RAG tree calibration/Compare Branching Times.R', chdir = TRUE)
+source('Compare Branching Times.R')
 
 
 ### Read CladeAge-Beast MCC tree ###
 
-Btree <- read.nexus("~/Documents/Avian Time Trees/CladeAge Simulations Beast/MCCtree.tre")
-Btree <- read.nexus("~/Documents/Avian Time Trees/CladeAge Simulations Beast/Variable sampling rate/MCC.tre")
+# Load the result from CladeAge + BEAST2 analysis (the Maximum Clade Credibility tree)
+
+Btree <- read.nexus("MCCtree.tre")
 
 Btree$root.edge <- NULL
 
