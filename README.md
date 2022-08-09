@@ -2,10 +2,8 @@
 
 Santiago Claramunt
 
-Department of Natural History, Royal Ontario Museum, and
-Department of Ecology and Evolutionary Biology, University of Toronto, Ontario, Canada.
-
-E-mail: claramunt.bio@gmail.com
+_Department of Natural History, Royal Ontario Museum_
+_Department of Ecology and Evolutionary Biology, University of Toronto_
 
 Functions and code used in the paper "CladeDate: empirical calibration density generator for divergence time estimation" (Claramunt 2022 Methods in Ecology and Evolution), including the first published version of the R package CladeDate (Version 1.0). The most updated version of CladeDate is in https://github.com/evolucionario/cladedate.
 
@@ -14,7 +12,7 @@ Functions and code used in the paper "CladeDate: empirical calibration density g
 
 ### CladeDate package version 1.0
 
-CladeDate is an R package for the generation of empirical calibration information from the fossil record. CladeDate uses simple mathematical models to estimate the age of a clade and its uncertainty based on fossil ages. Using a Monte Carlo approach, CladeDate generates empirical densities representing the uncertainty associated with the age of the clade and fits standard probability density functions that can be used in time-tree inference software such as BEAST2, MrBayes, and MCMCtree.
+`CladeDate` is an `R` package for the generation of empirical calibration information from the fossil record. `CladeDate` uses simple mathematical models to estimate the age of a clade and its uncertainty based on fossil ages. Using a Monte Carlo approach, `CladeDate` generates empirical densities representing the uncertainty associated with the age of the clade and fits standard probability density functions that can be used in time-tree inference software such as `BEAST2`, `MrBayes`, and `MCMCtree`.
 
 Instalation from the R console:
 
