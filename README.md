@@ -1,6 +1,6 @@
 # Code used in "CladeDate: calibration information generator for divergence time estimation" (Claramunt 2022, _Methods in Ecology and Evolution_)
 
-Santiago Claramunt
+**Santiago Claramunt**
 
 _Department of Natural History, Royal Ontario Museum_ 
 _Department of Ecology and Evolutionary Biology, University of Toronto_
@@ -28,7 +28,7 @@ library(CladeDate)
   
   2. Simulations CladeDate with Chronos: `R` code for analyzing the simulated data using `CladeDate` and the time-tree estimation function `chronos` in the `ape` package (Paradis & Schliep 2019).
 
-  3. Simulation for CladeAge Analysis: `R` code for the comparison between `CladeDate` + `chronos` and `CladeAge` + `BEAST` (Matschiner et al. 2017).
+  3. Simulation for CladeAge Analysis: `R` code for the comparison between `CladeDate` + `chronos` and `CladeAge` + `BEAST` (Matschiner _et al._ 2017).
 
 
 ### References
