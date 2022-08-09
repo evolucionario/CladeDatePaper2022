@@ -17,7 +17,7 @@ Instalation from the R console:
 
 ````
 library(devtools)
-install_github("evolucionario/CladeDate")
+install_github("evolucionario/CladeDatePaper2022")
 library(CladeDate)
 ````
 
