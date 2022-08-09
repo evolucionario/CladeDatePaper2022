@@ -25,6 +25,6 @@ library(CladeDate)
 
   Simulation of Datasets: R code used for generating phylogenetic trees, DNA sequencies, and fossil records
   
-  Simulations for CladeDate Validation: R code for analyzing the simulated data using CladeDate and the time-tree estimation function 'chronos' (ape package) 
+  Simulations CladeDate with Chronos: R code for analyzing the simulated data using CladeDate and the time-tree estimation function 'chronos' (ape package) 
 
   Simulation for CladeAge Analysis: R code for the comparison between CladeDate + chronos and CladeAge + BEST
