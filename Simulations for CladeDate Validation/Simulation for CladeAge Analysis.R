@@ -5,6 +5,7 @@
 ### Simulation that creates a dataset (tree, fossils, DNA alignment) to be used with CladeAge and BEST2 so the results can be compared to the new CladeDate + Chronos.
 
 library(ape)
+library(phangorn)
 library(CladeDate)
 library(TreeSim)
 library(FossilSim)
@@ -17,7 +18,7 @@ SEED <- 99
 # using TreeSim function in a 'repeat' loop to make sure basal sister taxa both have more than 2 species (so at least one internal node)
 # balance calculates the numer of descendants for each dougther clade and the first entry is the root node
 
-#tr <- sim.bd.taxa.age(age=AGE, n=10, numbsim=1, lambda=0.1, mu=0, frac = 1, mrca = TRUE)[[1]]
+#tr <- sim.bd.taxa.age(age=20, n=10, numbsim=1, lambda=0.1, mu=0, frac = 1, mrca = TRUE)[[1]]
 
 tr <- read.tree(text="((((t7:11.06730802,(t3:5.30770791,t9:5.30770791):5.759600115):4.673794634,t8:15.74110266):0.5778341325,t6:16.31893679):3.681063209,((t2:4.813437322,t1:4.813437322):5.261159269,((t4:2.856380757,t5:2.856380757):5.879688258,t10:8.736069015):1.338527576):9.925403409):0;")
 
@@ -29,7 +30,6 @@ plot(tr); nodelabels()
 tr$root.edge <- NULL
 
 write.tree(tr, file="Simulated0.tre")
-tr <- read.tree(file="Simulated0.tre")
 
 ### Add outgroup to tree ###
 
@@ -62,14 +62,16 @@ plot(tr2); axisPhylo()
 # Basic method with high stochasticity due to short sequence length
 # The idea is that the sequences, which are simulated in a strict clock fashion, do not dominate the results
 
-# JC model:
+# JC model with 
+
+RATE <- 0.02
 
 set.seed(SEED)
 DNA <- simSeq(tr2, l = 1000, type = "DNA", rate = RATE)
 
 write.FASTA(as.DNAbin(DNA), file="SimulatedDNA0.fas")
 
-### END ###
+### DNA sequences ready ###
 
 
 ######################################################################
@@ -94,8 +96,6 @@ MLtree3 <- drop.tip(MLtree2, tip="og")
 plot(MLtree3)
 
 write.tree(MLtree3, file="EstimatedML0.tre")
-
-MLtree3 <- read.tree(file="EstimatedML0.tre")
 
 ### ML tree ready ###
 
@@ -140,14 +140,7 @@ fr.clade1 <- fossil.record(calib.nodes[1], tr, Fos2)
 fr.clade2 <- fossil.record(calib.nodes[2], tr, Fos2)
  
 
-
-save(fr.clade1, file="FossilRecordClade1.0.R")
-save(fr.clade2, file="FossilRecordClade2.0.R")
-
 save(Fos2, file=paste0("FossilSim0.R"))
-
-#load(file="FossilRecordClade1.0.R")
-#load(file="FossilRecordClade2.0.R")
 
 ### END ###
 
