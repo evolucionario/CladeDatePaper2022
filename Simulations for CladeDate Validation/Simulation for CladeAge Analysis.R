@@ -226,14 +226,9 @@ save(date.clade2, file=paste0("Clade2date0.R"))
 
 ### Get oldest fossil of each clade to use in CladeAge ###
 
-# Repeat the following code for each node
-
-# For clades use stem=TRUE to include fossils in the stem (as per CladeAge method)
-fossil.record(16, tr, fossils=Fos2)
-
-# For terminal branches, indicated by the number (not the name) of a tip, use stem=FALSE (the default)
-
-fossil.record(2, tr, fossils=Fos2)
+# Use fossil.record() to obtain the ages of the fossils on each branch.
+# Use this information together with the FASTA file of DNA alignments and the tree to build the xml file for BEAST2.
+# See: https://taming-the-beast.org/tutorials/CladeAge-Tutorial/
 
 
 
