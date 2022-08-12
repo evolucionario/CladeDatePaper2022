@@ -276,7 +276,7 @@ source('Compare Branching Times.R')
 
 # Load results from CladeAge + BEAST2 analysis
 
-ptrees <- read.nexus("~/Documents/Avian Time Trees/CladeDatePaper2022Simulations/Simulations for CladeDate Validation/BEAST/CladeAge0.5.trees") 
+ptrees <- read.nexus("BeastPosterior.trees") 
 
 
 ### Color Definitions ####
