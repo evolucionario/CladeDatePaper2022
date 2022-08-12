@@ -6,6 +6,6 @@
 
 3. Run scripts in file `Simulation of Datasets.R` to generate phylogenetic trees, DNA sequences, and fossil records.
 
-4. Run scripts in file `Simulation CladeDate with Chronos.R` to time-calibrate phylogenetic trees using CladeDate and plott results.
+4. Run scripts in file `Analysis CladeDate Accuracy.R` to time-calibrate phylogenetic trees using CladeDate and plott results.
 
-5. Run scripts in file `Simulation for CladeAge Analysis.R` to create datasets to be analyzed with `CladeDate` and `CladeAge` and compare results. Run the `CladeAge.xml` file in `BEAST2` to obtain results based on CladeAge.
+5. Run scripts in file `Comparison CladeDate CladeAge.R` to create datasets to be analyzed with `CladeDate` and `CladeAge` and compare results. Run the `CladeAge.xml` file in `BEAST2` to obtain results based on CladeAge.
