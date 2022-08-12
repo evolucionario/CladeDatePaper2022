@@ -142,7 +142,7 @@ col.cd <- rgb( .8, .3, 0)
 col.cd <- rgb( .7, .2, 0)
 col.cd.bg <- rgb( .8, .4, 0, 0.5)
 
-quartz("trees",5,5); par(mgp=c(1.8,0.4,0), tcl=-0.3, las=1, cex.axis=0.8)
+quartz("trees", 4.5, 4.5); par(mgp=c(1.8,0.4,0), tcl=-0.3, las=1, cex.axis=0.8)
 
 plot(0:24, 0:24, type="n", xlim=c(0, Max), ylim=c(0, Max), xlab="True node age", ylab="Estimated node age", log="")
 
