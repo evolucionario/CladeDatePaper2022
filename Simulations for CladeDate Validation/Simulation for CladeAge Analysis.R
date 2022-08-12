@@ -4,23 +4,31 @@
 
 ### Simulation that creates a dataset (tree, fossils, DNA alignment) to be used with CladeAge and BEST2 so the results can be compared to the new CladeDate + Chronos.
 
+
+### Load Required Packages ###
+
 library(ape)
 library(phangorn)
 library(CladeDate)
 library(TreeSim)
 library(FossilSim)
 
+
+setwd('~/Documents/Avian Time Trees/CladeDatePaper2022Simulations/Simulations for CladeDate Validation')
+
+# Set a seed for the random number
+
+SEED <- 1
+
+
 #####################
 ### Simulate tree ###
 
-SEED <- 99
-
-# using TreeSim function in a 'repeat' loop to make sure basal sister taxa both have more than 2 species (so at least one internal node)
-# balance calculates the numer of descendants for each dougther clade and the first entry is the root node
-
+# Simulate a birth-death tree. The function doesn't return the same tree with the provided seed so the original tree si provides so the same xml files for BEAST can be used.
+#set.seed(SEED)
 #tr <- sim.bd.taxa.age(age=20, n=10, numbsim=1, lambda=0.1, mu=0, frac = 1, mrca = TRUE)[[1]]
 
-tr <- read.tree(text="((((t7:11.06730802,(t3:5.30770791,t9:5.30770791):5.759600115):4.673794634,t8:15.74110266):0.5778341325,t6:16.31893679):3.681063209,((t2:4.813437322,t1:4.813437322):5.261159269,((t4:2.856380757,t5:2.856380757):5.879688258,t10:8.736069015):1.338527576):9.925403409):0;")
+tr <- read.tree(text="((((t4:1.925737249,t9:1.925737249):0.5303991474,t8:2.456136396):6.566717035,(t6:2.306491955,t1:2.306491955):6.716361476):10.97714657,(((t10:4.999615538,t7:4.999615538):6.866952518,(t5:5.918453114,t3:5.918453114):5.948114941):4.260349859,t2:16.12691791):3.873082085);")
 
 plot(tr); nodelabels()
 
@@ -28,6 +36,8 @@ plot(tr); nodelabels()
 # delete root edge (creates problems in FossiSim)
 
 tr$root.edge <- NULL
+
+write.tree(tr)
 
 write.tree(tr, file="Simulated0.tre")
 
@@ -140,82 +150,92 @@ fr.clade1 <- fossil.record(calib.nodes[1], tr, Fos2)
 fr.clade2 <- fossil.record(calib.nodes[2], tr, Fos2)
  
 
-save(Fos2, file=paste0("FossilSim0.R"))
-
 ### END ###
 
 
-#############################################
-### Estimate Clade Age from Fossil Record ###
+
+
+###################################
+### Prepare xml file for BEAST2 ###
+
+# Load the FASTA file of DNA alignments into Beati and setup a basic CladeAge analysis.
+
+# Specify a JC69 model and a strict clock model.
+
+# Specify a starting tree using the simulated true tree: write.tree(tr)
+# Otherwise, Beast2 may have a hard time finding a tree compatible with all clade and time constraints specified below.
+
+# Identify the oldest fossil on each branch to set up clades and constraitns.
+# See: https://taming-the-beast.org/tutorials/CladeAge-Tutorial/
+
+cbind(Fos2[,"edge"], Fos2[,"hmin"])
+
+plot(Fos2, tr); nodelabels(pos=2, frame="n", font=2); tiplabels(frame="n", pos=2)
+
+tiplabels(tr$tip.label, pos=4, frame="n", font=3, cex=1.3)
+
+# Note that CladeAge uses the stem age of clades so use the oldest fossil in the stem of the clade if present.
+
+# Set boundaries for the fossil sampling rate parameters:
+ 
+#                    <parameter id="minSamplingRate" spec="parameter.RealParameter" name="minSamplingRate">0.05</parameter>
+#                    <parameter id="maxSamplingRate" spec="parameter.RealParameter" name="maxSamplingRate">5.00</parameter>
+
+# Set the net diversificationr rate parameter at the empirical rate: 10 species in 20 million years log(10/2)/20 = 0.8 
+
+# Disable the operators that change the topology so only branch length are sampled using the same original topology, if provided as initial tree.
+
+# Run the xml file in BEST2
+
+
+
+
+
+
+################################################################
+### Estimate the Age of the Two Basal Clades Using CladeDate ###
 
 date.clade1 <- clade.date(ages=fr.clade1$fossil.ages, KStest=TRUE, repvalues=FALSE)
 
-save(date.clade1, file=paste0("Clade1date0.R"))
+summary.clade.date(date.clade1)
 
-#$Quantiles
-#      0%      50%      95% 
-#15.21580 16.39652 21.34264 
+	Exact one-sample Kolmogorov-Smirnov test
 
-#$KStest
-
-#	Exact one-sample Kolmogorov-Smirnov test
-
-#data:  Mages
-#D = 0.21748, p-value = 0.7712
-#alternative hypothesis: two-sided
+data:  Mages
+D = 0.46449, p-value = 0.4207
+alternative hypothesis: two-sided
 
 
-#$PDFfit.model
-#[1] "lognormal"
+Quantiles:
+    0%    50%    95% 
+ 6.846  8.501 18.230 
 
-#$PDFfit
-#     meanlog        sdlog   
-#  0.003230185   1.331636473 
-# (0.013316365) (0.009416092)
+Parameters of the gamma function:
+offset  shape   rate 
+6.8460 0.7401 0.2295 
  
 
 
 
 date.clade2 <- clade.date(ages=fr.clade2$fossil.ages, KStest=TRUE, repvalues=FALSE)
  
-save(date.clade2, file=paste0("Clade2date0.R"))
+summary.clade.date(date.clade2)
 
-#$Quantiles
-#       0%       50%       95% 
-# 8.603469  9.008276 10.509394 
+	Exact one-sample Kolmogorov-Smirnov test
 
-#$KStest
-
-#	Exact one-sample Kolmogorov-Smirnov test
-
-#data:  Mages
-#D = 0.19014, p-value = 0.6255
-#alternative hypothesis: two-sided
+data:  Mages
+D = 0.17469, p-value = 0.2678
+alternative hypothesis: two-sided
 
 
-#$PDFfit.model
-#[1] "lognormal"
+Quantiles:
+   0%   50%   95% 
+15.20 15.53 16.65 
 
-#$PDFfit
-#     meanlog         sdlog    
-#  -1.089524008    1.307049413 
-# ( 0.013070494) ( 0.009242235)
+Parameters of the gamma function:
+ offset   shape    rate 
+15.2023  0.9791  2.0355 
 
-
-###################################
-### Prepare xml file for BEAST2 ###
-
-# Use fossil.record() to obtain the ages of the fossils on each branch.
-# Use this information together with the FASTA file of DNA alignments and the tree to build the xml file for BEAST2.
-# See: https://taming-the-beast.org/tutorials/CladeAge-Tutorial/
-
-# Set the fossil sampling rate parameters by editiing this line: 
-#                    <parameter id="minSamplingRate" spec="parameter.RealParameter" name="minSamplingRate">0.5</parameter>
-#                    <parameter id="maxSamplingRate" spec="parameter.RealParameter" name="maxSamplingRate">0.5</parameter>
-
-# Run in BEST2 and generate a Maximum Clade Credibility Treee in TreeAnnotator.
-
-# Repeat the analysis with lternative values for the fossil sampling rate parameter (0.05 and 5.0) to explore the influence of this parameter.
 
 
 
@@ -256,51 +276,43 @@ plot(truebt, Chronobt, las=1); abline(0,1)
 source('Compare Branching Times.R')
 
 
-### Read CladeAge-Beast MCC tree ###
-
-# Load results from CladeAge + BEAST2 analysis (the Maximum Clade Credibility tree)
-
-# Analysis with fossil sampling rate = 0.5 (true value)
-Btree <- read.nexus("CladeAgeMCCtree.tre")
-
-# Analysis with fossil sampling rate = 5.0
-Btreepu <- read.nexus("CladeAgeMCCpup.tre") 
-
-# Analysis with fossil sampling rate  0.05
-Btreepd <- read.nexus("CladeAgeMCCpdown.tre") 
 
 
+#############
+### Plot ####
+#############
 
 
-###################
-### Final Plot ####
-###################
+### Read CladeAge-BEAST Posterior ###
+
+# Load results from CladeAge + BEAST2 analysis
+
+ptrees <- read.nexus("~/Documents/Avian Time Trees/CladeDatePaper2022Simulations/Simulations for CladeDate Validation/BEAST/CladeAge0.5.trees") 
 
 
-###################
-### Final Plot ####
-###################
+### Color Definitions ####
 
 col.ca <- rgb( 0, .45, .7)
-col.ca.bg <- rgb( 0, .45, .7, .5)
+col.ca.bg <- rgb( 0, .6, .5, .1)
 col.cd <- rgb( .8, .3, 0)
 col.cd.bg <- rgb( .8, .4, 0)
 
 
-quartz("trees",5,5); par(mgp=c(1.8,0.4,0), tcl=-0.3, las=1, cex.axis=0.8, xaxs="i", yaxs="i")
+### Plot ####
 
-plot(compareBTs(tr, Btreepd)$BT, type="n", xlab="True branching times", ylab="Estimated branching times", xlim=c(0,23), ylim=c(0,23))
+quartz("trees",4.5,4.5); par(mgp=c(1.8,0.4,0), tcl=-0.3, las=1, cex.axis=0.8, xaxs="i", yaxs="i")
+
+plot(compareBTs(tr, Chrono)$BT, type="n", xlab="True branching times", ylab="Estimated branching times", xlim=c(0,23), ylim=c(0,23))
 
 abline(0,1)
 
-points(compareBTs(tr, Btreepu)$BT, col= col.ca, bg= col.ca.bg, cex=1.2, pch=24)
+for(i in seq(from=100, to=1000, by=1)) {
+points(compareBTs(tr, ptrees[[i]])$BT, col= col.ca.bg, bg= col.ca.bg, cex=1.2, pch=21)
+}
 
-points(compareBTs(tr, Btreepd)$BT, col= col.ca, bg= col.ca.bg, cex=1.2, pch=25)
+points(compareBTs(tr, Chrono)$BT, col=col.cd, bg=col.cd.bg, cex=1.2, pch=23)
 
-points(compareBTs(tr, Btree)$BT, col= col.ca, bg= col.ca.bg, cex=1.5, pch=23)
+legend("bottomright", legend=c("CladeDate + chronos", "CladeAge + BEAST2"), cex=0.8, bty="n", pch=c(23,21), pt.cex=1.4, col=c(col.cd, col.ca), pt.bg=c(col.cd.bg, rgb( 0, .6, .5, .7)))
 
-points(compareBTs(tr, Chrono)$BT, col=col.cd, bg=col.cd.bg, cex=1.2, pch=21)
-
-legend("bottomright", legend=c("CladeDate + chronos", "CladeAge + Beast2"), cex=0.7, bty="n", pch=22, pt.cex=1.3, col=c(col.cd, col.ca), pt.bg=c(col.cd.bg, col.ca.bg ))
-
-legend("topleft", title="Fossilization rate:", legend=c("0.05", "0.1-0.5", "5.0"), cex=0.7, bty="n", pch=c(6, 5, 2))
+### END ###
+###########
