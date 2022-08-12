@@ -1,6 +1,6 @@
-##############################################
-### Simulation for the CladeAge Comparison ###
-##############################################
+#################################################
+### Comparison Between CladeDate and CladeAge ###
+#################################################
 
 ### Simulation that creates a dataset (tree, fossils, DNA alignment) to be used with CladeAge and BEST2 so the results can be compared to the new CladeDate + Chronos.
 
@@ -158,7 +158,7 @@ fr.clade2 <- fossil.record(calib.nodes[2], tr, Fos2)
 ###################################
 ### Prepare xml file for BEAST2 ###
 
-# Load the FASTA file of DNA alignments into Beati and setup a basic CladeAge analysis.
+# Delete the outgroup and load the FASTA file of DNA alignments into BEAUti and setup a basic CladeAge analysis.
 
 # Specify a JC69 model and a strict clock model.
 
@@ -185,7 +185,7 @@ tiplabels(tr$tip.label, pos=4, frame="n", font=3, cex=1.3)
 
 # Disable the operators that change the topology so only branch length are sampled using the same original topology, if provided as initial tree.
 
-# Run the xml file in BEST2
+# Run the xml file in BEAST2
 
 
 
@@ -271,7 +271,7 @@ plot(truebt, Chronobt, las=1); abline(0,1)
 
 
 ### Source compareBTs function to compare correct branching times
-# (ladderize and order are not putting the trees in the same order for some reason)
+# (Even without changing the topology, the trees obtained from BEAST may not be directy comparable.)
 
 source('Compare Branching Times.R')
 
