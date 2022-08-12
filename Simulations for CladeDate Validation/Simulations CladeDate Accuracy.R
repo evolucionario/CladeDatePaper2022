@@ -4,6 +4,7 @@
 
 
 library(ape)
+library(phangorn)
 library(CladeDate)
 
 
@@ -43,7 +44,7 @@ load(file=paste0("FossilRecordClade1.",i,".R")) # fr.clade1
 load(file=paste0("FossilRecordClade2.",i,".R")) # fr.clade2
 
 
-### Estimate tehe age of clade from the fossil record ###
+### Estimate the age of clades from the fossil record ###
 
 ## Clade 1 
 
