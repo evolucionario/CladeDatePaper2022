@@ -185,6 +185,8 @@ tiplabels(tr$tip.label, pos=4, frame="n", font=3, cex=1.3)
 
 # Disable the operators that change the topology so only branch length are sampled using the same original topology, if provided as initial tree.
 
+# A CladeAge.xml is provided as a reference but clade dates may need to be modified if new simulated fossil are used.
+
 # Run the xml file in BEAST2
 
 
@@ -254,19 +256,6 @@ Chrono <- chronos( phy = MLtree3, model="clock", calibration=Calib)
 cat(attr(Chrono, "message"))
 
 plot(Chrono); axisPhylo()
-
-Chrono <- ladderize(Chrono)
-
-tr <- ladderize(tr)
-
-plot(tr$edge.length, Chrono$edge.length, las=1); abline(0,1)
-
-
-truebt <- branching.times(tr)
-
-Chronobt <- branching.times(Chrono)
-
-plot(truebt, Chronobt, las=1); abline(0,1)
 
 
 
