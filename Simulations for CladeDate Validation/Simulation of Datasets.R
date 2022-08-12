@@ -157,7 +157,12 @@ save(fr.clade2, file=paste0("FossilRecordClade2.",i,".R"))
 
 save(Fos2, file=paste0("FossilSim",i,".R"))
 
-	
+
+cat(paste("\nReplicate",i,"completed\n"))
+
+}
+
+
 ### END OF MAIN LOOP ###
 ########################
 
